@@ -1,0 +1,6 @@
+.borda {
+    border: 1px solid red;
+    /*display: inline;*/    /* Muda o comportamento para inline */
+    /*display: block;*/     /* Muda o comportamento para block */
+    display: inline-block;  /* Só quebra para a próxima linha se não cabe na mesma */
+}

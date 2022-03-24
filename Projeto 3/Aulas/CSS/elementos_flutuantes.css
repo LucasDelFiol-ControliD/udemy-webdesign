@@ -1,0 +1,39 @@
+/* Elementos flutuantes: sai do fluxo normal do documento, pode sobrepor outros elementos (exceto outros elementos flutuantes) */
+.conteudo1 {
+    background: red;
+    border: 1px solid gray;
+    width: 150px;
+    height: 320px;
+    margin: 10px;
+
+    float: left;
+}
+
+.conteudo2 {
+    background: blue;
+    border: 1px solid gray;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+
+    float: left;
+}
+
+.conteudo3 {
+    background: blue;
+    border: 1px solid gray;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+
+    float: left;
+}
+
+.clear {
+    clear: left;    /* left, right, both, none */
+}
+
+#principal {
+    border: 5px solid red;
+    background: green;
+}

@@ -1,0 +1,26 @@
+/* Modelo de caixa */
+
+.conteudo {
+    border: 1px solid red;
+
+    /* padding: espaçamento interno */
+    /* O tamanho do padding é contabilizado na espessura/altura da caixa */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    /* padding: 10px 20px 10px 20px; */ /* top right bottom left*/
+    /* padding: 10px */ /* deixa 10px em todos os lados */
+
+    /* margin: espaçamento externo */
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    /* margin: 20px 10px 20px 10px; */ /* top right bottom left */
+    /* margin: 10px */ /* deixa 10px em todos os lados */
+
+    /* Em caso de sobreposição de margem, o maior valor sobrepõe os demais (margin collapse) */
+
+    width: 150px;
+}

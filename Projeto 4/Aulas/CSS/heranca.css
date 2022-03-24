@@ -1,0 +1,32 @@
+body {
+    color: red;
+    font-size: 16px;
+
+    /* border e background não são herdados */
+    border: 1px solid blue;
+    background: gray;
+}
+
+/* Um seletor mais específico tem mais prioridade que regras mais gerais */
+p {
+    color: blue !important; /* Este atributo possui prioridade quanto aos outros */
+}
+
+/* No caso de dois seletores iguais, o último é geralmente o aplicado */
+p {
+    color: yellow;
+}
+
+/* Uma classe é mais específica ainda */
+h2.verde {
+    color: green;
+}
+
+h2 {
+    color: red;
+}
+
+/* ID é mais específico que classe */
+h2#amarelo {
+    color: yellow
+}

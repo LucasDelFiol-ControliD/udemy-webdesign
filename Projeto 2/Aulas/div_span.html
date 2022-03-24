@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tags Div e Span</title>
+        <meta charset = "utf-8">
+        <style type = "text/css">
+            #conteudo {
+                background: red;
+            }
+
+            #rodape {
+                background: green;
+            }
+
+            #topo {
+                background: blue;
+            }
+
+            .azul {
+                color: blue;
+            }
+
+            .produto {
+                background: gray;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- A tag div é utilizada para dividir o site em seções, agrupar elementos de um site -->
+        <div id = "topo">
+            <img src = "Imagens/epusp.png" width = "200">
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+            </ul>
+        </div>
+
+        <div id = "conteudo">
+            <div class = "produto">
+                1
+            </div>
+
+            <div class = "produto">
+                2
+            </div>
+
+            <div class = "produto">
+                3
+            </div>
+        </div>
+
+        <!-- A tag span funciona como a tag div, porém não ocupa 100% do espaçamento horizontal da página -->
+        <div id = "rodape">
+            Todos os <span class = "azul">direitos</span> reservados.
+        </div>
+
+        <!-- div: elemento de bloco -->
+        <!-- span: elemento de linha -->
+    </body>
+</html>

@@ -1,0 +1,44 @@
+/* Seletor Universal */
+* {
+    border: 1px solid red;
+}
+
+/* Seletor de Texto */
+h1 {
+    color: green;
+}
+
+/* Seletor de Classe */
+.verde {
+    color: green;
+}
+
+p.azul {   /* Está definido apenas para parágrafos */
+    color: blue;
+}
+
+/* Seletor de ID */
+#cabecalho {
+    border: 1px solid blue;
+}
+
+/* Seletor de filho */
+li>a {
+    color: red; /* Apenas para filhos dentro de um item de uma lista (li) */
+    text-decoration: none;
+}
+
+/* Seletor de descendente */
+p a {
+    color: green;   /* Vale para links que estejam dentro de um parágrafo */
+}
+
+/* Seletor de irmão adjacente */
+h2+p {
+    color: red;     /* Aplica no primeiro parágrafo posterior e adjacente ao título h2 */
+}
+
+/* Seletor de irmão geral */
+h3~p {
+    color: pink;    /* Aplica nos parágrafos posteriores e adjacentes ao título h3 */
+}

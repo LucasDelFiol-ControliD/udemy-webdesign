@@ -1,0 +1,25 @@
+a {
+    padding: 5px;
+    text-decoration: none; /* Remove o underline */
+}
+
+/* Links não visitados */
+a:link {
+    color: #b9c941;
+}
+
+/* Links visitados */
+a:visited {
+    color: #c0c0c0;
+}
+
+/* Passa o cursos sobre o link (hover) */
+a:hover {
+    color: #FFF;
+    background: #6d790f;
+}
+
+/* Links Ativos, quando clicado */
+a:active {
+    color: #e4f371;
+}

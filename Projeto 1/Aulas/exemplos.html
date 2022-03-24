@@ -1,0 +1,94 @@
+<!-- Define o formato do arquivo -->
+<!DOCTYPE html>
+
+<!-- Define para o browser que o codigo HTML esta na secao abaixo -->
+<html>
+    <!-- Cabecalho -->
+    <head>
+        <!-- Define o titulo da pagina (que aparece na aba do browser) -->
+        <title>Primeiro Projeto</title>
+        <!-- Define a codificacao da pagina (nesse caso, permite o uso de acentos) -->
+        <meta charset = "utf-8">
+    </head>
+    <!-- Corpo -->
+    <body>
+        <!-- h1, h2, h3, h4, h5, h6: tipo de cabecalho, define a formatacao -->
+        <h1>Lorem Ipsum</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce orci neque, hendrerit at metus ac, fermentum interdum ex. In pharetra sem ex, in maximus est pharetra id. Quisque dapibus vulputate massa, eu pulvinar turpis mattis in. Etiam auctor nisl in erat aliquet molestie. Nullam sagittis libero sapien, vitae aliquet est porttitor et. Duis pulvinar laoreet ornare. Suspendisse consequat semper turpis a blandit. Curabitur consectetur, orci sed consequat consectetur, magna orci varius augue, ac blandit tellus enim a leo. Praesent imperdiet, nulla a vulputate porttitor, sem odio placerat est, ac semper ligula sapien eget libero.</p>
+        <hr>
+        <p>Etiam placerat libero ante, eu molestie libero laoreet ut. Sed nec tincidunt urna, sed vulputate erat. Etiam vulputate neque quis tempor vulputate. Aliquam semper purus turpis, ut suscipit libero tincidunt ut. Nullam tempor tincidunt odio et tincidunt. Nunc tempus purus eu imperdiet auctor. Sed iaculis porttitor congue. Sed nulla erat, tincidunt ac vehicula vitae, dapibus maximus neque. Etiam pulvinar nisl dolor, ac molestie nulla elementum id. Nullam et ligula tellus. Ut blandit lacus arcu, vitae luctus erat efficitur feugiat. Phasellus venenatis et lectus eu viverra. Sed sit amet neque scelerisque, scelerisque risus eget, auctor dui. Quisque sed felis a lectus vulputate volutpat.</p>
+        <hr>
+
+        <h2>Formatação de texto</h2>
+        Esse é um texto <strong>negrito</strong> <br>   <!-- Pode ser <b> também -->
+        Esse é um texto <em>itálico</em> <br>           <!-- Pode ser <i> também -->
+        Esse é um texto <u>underline</u> <br>
+        Esse é um texto <strike>errado</strike> <br>
+
+        <h2>Lista Não Ordenada</h2>
+        <ul type = "square">    <!-- Tipo de marcador: circle, square, disc -->
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <h2>Lista Ordenada</h2>
+        <ol type = "A">         <!-- Tipo de marcador: 1, A, a, I, i -->
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+
+        <h2>Imagem</h2>
+        <img src = "Imagens/cidade.jpg" width = "500">    <!-- Pode ser um endereço na web -->
+        <!-- Definir width e/ou height, se definir ambos, a imagem ficará distorcida -->
+
+        <h2>Tabela</h2>
+        <table border = "2" width = "100%"> <!-- width pode ser também um tamanho definido, vale para imagem também -->
+            <!-- Linha da tabela -->
+            <tr>
+                <!-- Cabeçário da tabela -->
+                <th>01</th>
+                <th>02</th>
+                <th>03</th>
+            </tr>
+
+            <tr>
+                <!-- Dados/Células da tabela -->
+                <td>aa</td>
+                <td>bb</td>
+                <td>cc</td>
+            </tr>
+
+            <tr>
+                <td>dd</td>
+                <td>ee</td>
+                <td>ff</td>
+            </tr>
+
+            <tr>
+                <td>A</td>
+                <td colspan = "2">B</td>    <!-- Ocupa o espaço de duas colunas -->
+            </tr>
+
+            <tr>
+                <td rowspan = "2">C</td>    <!-- Ocupa o espaço de duas linhas -->
+                <td>D</td>
+                <td>E</td>
+            </tr>
+
+            <tr>
+                <td>F</td>
+                <td>G</td>
+            </tr>
+        </table>
+
+        <h2>Caracteres especiais</h2>
+        <!-- Site com a tabela de entidades: w3schools.com -->
+
+        tag &lt;p&gt; <br>
+        1 tab = 4 espaços: &nbsp;&nbsp;&nbsp;&nbsp; <br>
+        
+    </body>
+</html>

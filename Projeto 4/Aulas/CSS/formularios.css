@@ -1,0 +1,38 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+fieldset {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #cccccc;
+    background: #f8f8f8;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
+/* Definir a formatação apenas para o atributo text: input [type = "text"] */
+input {
+    width: 20em;
+}
+
+textarea {
+    width: 20em;
+    height: 10em;
+}
+
+/* Outra forma... */
+input.radio, input.checkbox, input.submit {
+    width: auto;
+}
+
+.radio {
+    margin-right: 1em;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cor e imagem de fundo</title>
+        <meta charset = "utf-8">
+
+        <!-- Internal Style Sheet -->
+        <style type = "text/css">
+            body {
+                background-image: url('Imagens/epusp.png'); /* Por padrão, preenche a página horizontalmente e verticalmente */
+                background-repeat: no-repeat;   /* repeat, repeat-x, repeat-y, no-repeat */
+                background-attachment: fixed;   /* fixed (imagem fica fixa no browser), scroll */
+                background-position: center center; /* horizontal (left, center, right), vertical (top, center, bottom) */
+            }
+
+            /* Exemplo com todos os parâmetros numa mesma classe */
+            .fundo {
+                background: blue url('Imagens/epusp.png') no-repeat fixed center center;
+            }
+        </style>
+    </head>
+    <body class = "fundo">
+        <h1>Conteúdo de título 1</h1>
+
+        <!-- É possível utilizar CSS inline -->
+        <h1 style = "color: red;">Conteúdo de título 2</h1>
+    </body>
+</html>

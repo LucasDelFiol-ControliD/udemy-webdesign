@@ -1,0 +1,43 @@
+body {
+    background: #007fc7;
+}
+
+#container {
+    background: #fff;
+    width: 800px;
+    margin: 10px auto;  /* top/bottom left/right */
+    padding: 10px;
+    position: relative;
+}
+
+/* Por padrão, a posição das tags é static */
+/* top, right, bottom, left: números negativos também funcionam */
+
+/* Sai do fluxo normal do documento e não afeta os outros elementos da página */
+.absolute {
+    border: 1px solid red;
+    position: absolute;
+
+    /* Posição absoluta em relação ao container em que está o elemento */
+    top: 0px;
+    right: 0px;
+}
+
+/* Fixa o elemento na janela do navegador, ignora o scroll */
+.fixed {
+    border: 1px solid red;
+    position: fixed;
+
+    /* Posição absoluta em relação ao container em que está o elemento */
+    bottom: 0px;
+    right: 0px;
+}
+
+/* Permite mover o elemento com base em deslocamentos */
+.relative {
+    border: 1px solid red;
+    position: relative;
+
+    /* Posição relativa ao próprio container */
+    left: 80px;
+}
