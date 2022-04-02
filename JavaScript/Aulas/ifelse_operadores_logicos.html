@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>If/Else - Operadores Lógicos</title>
+        <meta charset="utf-8">
+        <script>
+            var media = 5;
+            var presenca_min = 70;
+            var nota = prompt('Digite a nota do aluno: ');
+            var presenca = prompt('Digite a porcentagem de presença: ');
+
+            // Operadores lógicos: and (&&), or (||) e not (!)
+            if (nota >= media && presenca >= presenca_min) {
+                document.write('Aprovado');
+            } else {
+                document.write('Reprovado');
+            }
+
+            document.write('<br><br>');
+
+            // Operador ternário: var resultado = <condicao> ? <verdadeiro> : <falso>
+            var resultado = (nota >= media && presenca >= presenca_min) ? 'Aprovado' : 'Reprovado'; // O parênteses não é obrigatório
+
+            document.write(resultado);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Casting</title>
+        <meta charset="utf-8">
+        <script>
+            var variavel1 = prompt('Digite algum número: ');    // string
+            var variavel2 = prompt('Digite outro número: ');    // string
+            var variavel3 = prompt('Digite algum número: ');    // string
+            var variavel4 = prompt('Digite outro número: ');    // string
+            
+            document.write(variavel1 + variavel2);  // concatena strings
+
+            variavel1 = parseInt(variavel1);    // converte para número
+            variavel2 = parseInt(variavel2);    // converte para número
+
+            document.write(variavel1 + variavel2);  // soma numérica
+
+            variavel3 = parseFloat(variavel3);    // converte para número, preservando o valor decimal
+            variavel4 = parseFloat(variavel4);    // converte para número, preservando o valor decimal
+
+            document.write(variavel3 + variavel4);  // soma numérica, preservando o valor decimal
+
+            var variavel5 = 10; // número
+            var variavel6 = 20; // número
+
+            document.write(variavel5 + variavel6);  // soma numérica
+            document.write(variavel5.toString() + variavel6.toString());    // concatena strings
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

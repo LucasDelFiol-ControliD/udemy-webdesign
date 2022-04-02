@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operadores Aritméticos</title>
+        <meta charset="utf-8">
+        <script>
+            // Operadores aritméticos: adição (+), subtração (-), multiplicação (*), divisão (/), módulo (%), incremento (++), decremento (--)
+
+            var num1 = parseInt(prompt('Digite o valor de num1: '));
+            var num2 = parseInt(prompt('Digite o valor de num2: '));
+
+            // Instruções dentro de parênteses possuem precedência, logo serão executadas primeira.
+            document.write('A soma é: ' + (num1 + num2) + '<br>');
+            document.write('A subtração é: ' + (num1 - num2) + '<br>');
+            document.write('A multiplicação é: ' + (num1 * num2) + '<br>');
+            document.write('A divisão é: ' + (num1 / num2) + '<br>');
+            document.write('O módulo é: ' + (num1 % num2) + '<br>');
+
+            document.write('O incremento pós de num1 é: ' + (num1++) + '<br>'); // Realiza a instrução e então a soma
+            document.write('O incremento pré de num1 é: ' + (++num1) + '<br>'); // Realiza a soma e então a instrução
+
+            document.write('O decremento pós de num2 é: ' + (num2--) + '<br>'); // Realiza a instrução e então a subtração
+            document.write('O decremento pré de num2 é: ' + (--num2) + '<br>'); // Realiza a substração e então a instrução
+
+            // Operadores aritméticos no processo de atribuição: =, +=, -=, *=, /=, %= (realiza a operação com a variável desejada e então a substitui pelo resultado)
+            // Operadores de multiplicação e divisão possuem precedência sobre os de soma e subtração
+            // Parênteses aplicam precedência
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

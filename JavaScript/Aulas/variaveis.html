@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
         <title>Variáveis</title>
+        <meta charset="utf-8">
         <!-- JavaScript sem arquivo externo -->
         <script>
             // string
-            var texto = "Curso de JavaScript"
+            var texto = "Curso de JavaScript";
 
             // number
-            var numeroInteiro = -7
-            var numeroFracionado = 10.75
+            var numeroInteiro = -7;
+            var numeroFracionado = 10.75;
 
             // boolean - apenas true/false
-            var teste = true
+            var booleano = true;
 
-            document.write(texto) // Escreve na página
+            document.write(texto); // Escreve na página
+            console.log(texto); // Escreve no console
 
-            console.log(texto) // Escreve no console
+            // null - ausência intencional de um valor
+            var teste = null;
+
+            // undefined - foi declarada mas não possui nenhum valor
+            var teste2;
+
+            console.log(teste);
+            console.log(teste2);
+
+            // A inferência de tipo é automática
+            teste = 'Valor modificado com sucesso';
+            console.log(teste);
+            teste = 127.48;
+            console.log(teste);
         </script>
     </head>
     <body>
-        <h1>Variáveis</h1>
-        
     </body>
 </html>
