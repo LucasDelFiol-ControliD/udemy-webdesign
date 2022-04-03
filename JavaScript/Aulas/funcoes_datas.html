@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções nativas para manipular datas</title>
+        <meta charset="utf-8">
+        <script>
+            var data = new Date();
+            document.write(data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear());
+            document.write('<hr>');
+
+            // Adicionar ou remover dias
+            document.write(data.toString());
+            document.write('<br>');
+
+            data.setDate(data.getDate() + 20);
+            
+            document.write(data.toString());
+            document.write('<br>');
+
+            data.setDate(data.getDate() - 20);
+
+            document.write(data.toString());
+            document.write('<hr>');
+
+            // Adicionar ou remover dias
+            document.write(data.toString());
+            document.write('<br>');
+
+            data.setMonth(data.getMonth() + 2);
+            
+            document.write(data.toString());
+            document.write('<br>');
+
+            data.setMonth(data.getMonth() - 2);
+
+            document.write(data.toString());
+            document.write('<hr>');
+
+            // Adicionar ou remover anos
+            document.write(data.toString());
+            document.write('<br>');
+
+            data.setFullYear(data.getFullYear() + 1);
+            
+            document.write(data.toString());
+            document.write('<br>');
+
+            data.setFullYear(data.getFullYear() - 1);
+
+            document.write(data.toString());
+            document.write('<hr>');
+
+            // Operações entre datas
+            var data1 = new Date(2022, 0, 1);
+            var data2 = new Date(2022, 11, 31);
+
+            document.write(data1.toString());
+            document.write('<br>');
+            document.write(data2.toString());
+            document.write('<hr>');
+
+            // Converter datas para algo que possamos calcular
+            document.write(data1.getTime());
+            document.write('<br>');
+            document.write(data2.getTime());
+            document.write('<br>');
+
+            // getTime converte a data para milisegundos em relação a 01/01/1970
+            var datas_ms = Math.abs(data1.getTime() - data2.getTime())
+            document.write(datas_ms);
+            document.write('<br>');
+
+            // 1 dia = 86400000 ms
+            var dia_ms = 1*24*60*60*1000;
+            document.write(Math.ceil(datas_ms/dia_ms));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

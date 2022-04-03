@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Escopos</title>
+        <meta charset="utf-8">
+        <script>
+            // 3 escopos: global, função e o bloco
+            // Escopo global
+            var letra1 = 'A';
+            document.write(letra1);
+
+            // Escopo de bloco - variáveis criadas dentro são visíveis ao escopo global
+            if (true) {
+                var letra2 = 'B';
+                document.write(letra2);
+            }
+
+            document.write(letra2);
+
+            // Escopo de função - variáveis criadas dentro não são visíveis ao escopo global
+            function x() {
+                var letra3 = 'C';
+                document.write(letra3);
+            }
+
+            document.write(letra3);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

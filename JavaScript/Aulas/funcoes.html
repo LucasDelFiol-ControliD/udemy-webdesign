@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções</title>
+        <meta charset="utf-8">
+        <script>
+            // Função: não precisa ser declarada no começo do script
+            function calculaAreaTerreno(largura, comprimento) {
+                // Lógica
+                var area = largura*comprimento;
+                return area;
+            }
+
+            var largura = parseFloat(prompt('Digite a largura em metros: '));
+            var comprimento = parseFloat(prompt('Digite o comprimento em metros: '));
+
+            var area = calculaAreaTerreno(largura, comprimento);
+            document.write('O terreno possui ' + area + ' metros quadrados.');
+
+            function soma(a, b) {
+                a = (a === undefined ? 0 : a);
+                b = (b === undefined ? 0 : b);
+                return a + b;
+            }
+
+            console.log(soma(7, 7));
+            console.log(soma(7, 7, 9, 5)); // Ignora os parâmetros em excesso
+            console.log(soma(7)); // Retornaria NaN, pois estamos somando um número com um undefined
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

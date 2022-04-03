@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 03</title>
+        <meta charset="utf-8">
+        <script>
+            function calculo(num1, num2, operacao) {
+                var resultado;
+                switch (operacao) {
+                    case 'soma':
+                        resultado = num1 + num2;
+                        break;
+                    case 'subtração':
+                        resultado = num1 - num2;
+                        break;
+                    default:
+                        resultado = 0;
+                }
+                return resultado;
+            }
+
+            var numero1 = prompt('Digite um número: ');
+            var operacao = prompt('Soma ou subtração: ');
+            var numero2 = prompt('Digite outro número: ');
+
+            var resultado = calculo(parseFloat(numero1), parseFloat(numero2), operacao);
+            document.write('O resultado é: ' + resultado + '.');
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções anônimas</title>
+        <meta charset="utf-8">
+        <script>
+            function exibirArtigo(id, callbackSucesso, callbackErro) {
+                // Lógica: recuperar o id via requisição http (exemplo)
+                if (true) {
+                    callbackSucesso('Funções de callback em JS', 'Funções de callback são muito utilizadas...')
+                } else {
+                    callbackErro('Erro ao recuperar os dados.');
+                }
+            }
+
+            // Wrapper
+            var callbackSucesso = function(titulo, descricao) {
+                document.write('<h1>' + titulo + '</h1>');
+                document.write('<hr>');
+                document.write('<p>' + descricao + '</p>');
+            }
+
+            // Wrapper
+            var callbackErro = function(erro) {
+                document.write('<p><b>Erro: </b>' + erro + '</p>');
+            }
+
+            // Sem parênteses: envia a referecia para as funções
+            // Com parênteses: executa a função e então envia o resultado como parâmetro
+            exibirArtigo(1, callbackSucesso, callbackErro);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
