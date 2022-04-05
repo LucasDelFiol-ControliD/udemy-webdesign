@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 04</title>
+        <meta charset="utf-8">
+        <script>
+            function mudaBackground(corDeFundo) {
+                document.getElementById('entrada').style.background = corDeFundo;
+            }
+
+            function recuperaValor() {
+                var tamanho = document.getElementById('entrada').value.length;
+                if (tamanho < 3) {
+                    mudaBackground('#ff0000');
+                } else {
+                    mudaBackground('#00ff00');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" onfocus="mudaBackground('#ffff00')" id="entrada" onblur="recuperaValor()">
+    </body>
+</html>

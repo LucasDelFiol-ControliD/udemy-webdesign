@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventos - Teclado</title>
+        <meta charset="utf-8">
+        <script>
+            function acao() {
+                alert('Evento disparado')
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Executa a ação antes o resultado da tecla -->
+        <input onkeydown="acao()" type="text">
+
+        <!-- Executa a ação após o resultado a tecla -->
+        <input onkeyup="acao()" type="text">
+
+        <!-- Executa a ação antes o resultado da tecla, porém apenas teclas que possuem algum caractere associado -->
+        <input onkeypress="acao()" type="text">
+    </body>
+</html>

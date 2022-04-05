@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays - Ordenação</title>
+        <meta charset="utf-8">
+        <script>
+            var lista_frutas = ['Maçã', 'Uva', 'Banana', 'Morango'];
+            console.log(lista_frutas);
+            console.log(lista_frutas.sort()); // Faz uma reordenação alfanumérica com base nos valores dos elementos
+
+            var lista_numeros = [12, 40, 3, 7, 19, 1];
+            console.log(lista_numeros.sort()); // Apenas leva em conta o primeiro caractere
+
+            function ordenaNumeros(a, b) { // Elementos a e b podem ser alfanumérico ou número, ambos funcionam
+                return a - b;
+                // <0: a ordenado antes de b
+                // >0: b ordenado antes de a
+                // ==: a ordem é mantida
+            }
+
+            console.log(lista_numeros.sort(ordenaNumeros)); // Passa a referencia a função ordenaNumeros como parâmetro para sort
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

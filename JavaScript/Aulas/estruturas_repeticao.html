@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estruturas de Repetição</title>
+        <meta charset="utf-8">
+        <script>
+            var x = 0;
+
+            // While: checa condição no começo, antes das instruções do laço
+            while (x <= 10) {
+                x++;
+
+                if (x == 9) {
+                    // Interrompe o laço
+                    break;
+                }
+
+                if (x == 5) {
+                    // Para a execução do laço e vai para a próxima iteração
+                    continue;
+                }
+
+                document.write(x + '<br>'); // Não imprime o valor 5
+            }
+
+            document.write('<hr>');
+            x = 0;
+
+            // Do While: checa condição no final, após as instruções do laço
+            do {
+                document.write(x + '<br>');
+                x++;
+            } while (x <= 10);
+
+            document.write('<hr>');
+
+            // For: checa condição no começo, antes das instruções do laço, controla uma variável
+            for (var i = 10; i >= 0; i--) {
+                document.write(i + '<br>');
+            }
+
+            document.write('<hr>');
+
+            // Percorrendo e listando itens de Arrays
+            var lista_frutas = ['Banana', 'Maçã', 'Morango', 'Uva'];
+            for (var y = 0; y < lista_frutas.length; y++) {
+                document.write(lista_frutas[y] + '<br>');
+            }
+
+            document.write('<hr>');
+
+            // Tabuada de 1 a 10
+            for (var i = 1; i <= 10; i++) {
+                for (var j = 1; j <= 10; j++) {
+                    document.write(j + ' x ' + i + ' = ' + (j*i) + '<br>');
+                }
+                document.write('<hr>');
+            }
+
+            var listaConvidados = ['Jorge', 'Jamilton', 'José', 'Ana', 'Maria'];
+            console.log(listaConvidados);
+
+            // For in: variável x recebe a cada iteração o valor do índice do array, percorre até o final do array
+            for (var x in listaConvidados) {
+                console.log('Índice: ' + x + ' | Valor: ' + listaConvidados[x]); // Não depende dos tipos dos índices (pode ser número, string, booleano, etc)
+            }
+
+            var listaFuncionarios = ['Viviane', 'Rosângela', 'Miguel', 'Lucas', 'Fernanda'];
+            console.log(listaFuncionarios)
+
+            // For each: utiliza uma função de callback para realizar operações em arrays, a função de callback pode ser atribuída a uma variável
+            listaFuncionarios.forEach(function(valor, indice, array) {
+                console.log('Índice: ' + indice + ' | Valor: ' + valor);
+                if (valor == 'Lucas') {
+                    array[indice] = 'Novo valor';
+                }
+            });
+            console.log(listaFuncionarios);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

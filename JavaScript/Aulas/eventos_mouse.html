@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventos - Mouse</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .caixa {
+                background: #cccccc;
+                height: 150px;
+                width: 150px;
+                margin: 10px;
+                text-align: center;
+                line-height: 150px;
+                display: inline-block;
+            }
+        </style>
+        <script>
+            function acao1() {
+                alert('Evento 1 disparado')
+            }
+            function acao2() {
+                alert('Evento 2 disparado')
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Ao elemento ser clicado, ele irá executar o script onclick -->
+        <div onclick="acao1()" class="caixa">
+            onclick
+        </div>
+
+        <!-- Ao elemento ser duas vezes clicado, ele irá executar o script ondblclick -->
+        <div ondblclick="acao1()" class="caixa">
+            ondblclick
+        </div>
+
+        <!-- Ao clicar no elemento, quando o botão do mouse levantar, ele irá executar o script ondblclick -->
+        <div onmouseup="acao1()" class="caixa">
+            onmouseup
+        </div>
+
+        <!-- Quando o mouse passar pelo elemento, ele irá executar o script ondblclick -->
+        <div onmouseover="acao1()" class="caixa">
+            oumouseover
+        </div>
+        
+        <!-- Quando o mouse sair da área do elemento, ele irá executar o script ondblclick -->
+        <div onmouseout="acao1()" class="caixa">
+            oumouseout
+        </div>
+
+        <!-- É possível realizar vários eventos com o mesmo elemento -->
+        <div onclick="acao1()" onmouseout="acao2()" class="caixa">
+            onclick e oumouseout
+        </div>
+    </body>
+</html>

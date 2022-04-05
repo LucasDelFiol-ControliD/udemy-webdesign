@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 05</title>
+        <meta charset="utf-8">
+        <script>
+            var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+            function funcaoAdicionar() {
+                var valor = document.getElementById('adicionar').value;
+                if (valor.length) {
+                    if (objetos.indexOf(valor) == '-1') {
+                        objetos.push(valor);
+                        console.log(objetos);
+                        document.getElementById('adicionar').value = '';
+                    } else {
+                        alert('Objeto já foi adicionado');
+                    }
+                } else {
+                    alert('Informe um valor válido');
+                }
+            }
+
+            function funcaoOrdenar() {
+                objetos.sort();
+                console.log(objetos);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="adicionar">
+        <button type="button" onclick="funcaoAdicionar()">Adicionar</button>
+        <button type="button" onclick="funcaoOrdenar()">Ordenar</button>
+    </body>
+</html>
