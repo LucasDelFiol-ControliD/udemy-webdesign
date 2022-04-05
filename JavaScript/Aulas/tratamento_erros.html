@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tratamento de erros</title>
+        <meta charset="utf-8">
+        <script>
+            var lista = [];
+            lista[1] = [];
+            lista[1]['nome'] = 'Fullmetal Alchemist';
+            lista[1]['categoria'] = 'Anime';
+            console.log(lista);
+
+            function getLista(video) {
+                try {
+                    console.log(video[0]['nome']); // Gera exceção
+                } catch (erro) {
+                    tratarErro(erro);
+                    console.log('Agora sim podemos tratar esse erro');
+                    throw new Error('Houve um erro'); // Lança uma nova exceção
+                } finally {
+                    console.log('Sempre passa por aqui (try / catch)');
+                }
+
+                console.log('A aplicação não morreu');
+            }
+
+            function tratarErro(e) {
+                console.log(e);
+            }
+
+            getLista(lista);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

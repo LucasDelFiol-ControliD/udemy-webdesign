@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM - Timing</title>
+        <meta charset="utf-8">
+        <script>
+            setTimeout(function() {document.write('Timeout <br>')}, 1000); // Ocorre uma única vez após esperar 2s
+            setInterval(function() {document.write('Interval <br>')}, 2000); // Repete a cada 2s
+
+            var i = 10;
+            var x = setInterval(function() {
+                console.log(i);
+                i--;
+                if (i == 0) {
+                    clearInterval(x); // Interrompe a repetição (clearTimeout faz o mesmo para o setTimeout)
+                }
+            }, 1000)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
