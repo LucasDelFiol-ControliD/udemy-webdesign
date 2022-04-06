@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Var e Let</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // 3 Escopos: global, função e bloco
+            var teste = 'A'; // global
+            function x() {
+                var teste = 'B'; // função
+                console.log('função: ' + teste);
+                if (true) {
+                    var teste = 'D'; // bloco, é elevado ao escopo da função
+                    console.log('bloco dentro da função: ' + teste);
+                }
+            }
+
+            x();
+
+            if (true) {
+                var teste = 'C'; // bloco, é elevada ao escopo global
+                console.log('bloco: ' + teste);
+            }
+
+            console.log('global: ' + teste);
+
+            if (true) {
+                let outro_teste = 'Teste'; // let preserva o escopo onde a variável foi criada
+                console.log('bloco: ' + outro_teste);
+            }
+
+            console.log('global' + outro_teste);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Const</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // const: variável não muda de valor ao longo do script, é apenas para leitura
+            const TESTE = 'Teste';
+            console.log(TESTE);
+            // TESTE = 'Outra coisa'; // não funciona!
+            
+            function x() {
+                const TESTE = 'Outra constante';
+                console.log('função: ' + TESTE);
+            }
+
+            x();
+
+            console.log('global: ' + TESTE);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
