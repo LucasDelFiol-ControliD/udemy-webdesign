@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação a Objetos - Encapsulamento</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            class Tv {
+                constructor() {
+                    // Convenção: um underline antes do nome do atributo indica que ele é um atributo privado
+                    this._relacaoCanais = [2, 4, 5, 7, 10];
+                    this._canalAtivo = 2;
+                    this._volume = 20;
+                }
+
+                // Getters e Setters
+                get canalAtivo() {
+                    return this._canalAtivo;
+                }
+
+                set canalAtivo(canal) {
+                    // Apenas muda o canal se este estiver na lista de canais
+                    if (this._relacaoCanais.indexOf(canal) != -1) {
+                        this._canalAtivo = canal;
+                    }
+                }
+            }
+
+            let tv = new Tv();
+            console.log(tv.canalAtivo);
+            tv.canalAtivo = 7;
+            console.log(tv.canalAtivo);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

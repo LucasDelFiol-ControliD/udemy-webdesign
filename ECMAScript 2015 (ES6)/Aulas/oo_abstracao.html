@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orientação a Objetos - Abstração</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // Modelo da entidade/objeto
+            class ContaBancaria {
+                // Construtor
+                constructor() {
+                    // Atributos
+                    this.agencia = 1075;
+                    this.numeroConta = 8351125;
+                    this.saldo = 50;
+                    this.limite = 450;
+                }
+
+                // Métodos
+                depositar(valorDeposito) {
+                    this.saldo += valorDeposito;
+                }
+
+                sacar(valorSaque) {
+                    this.saldo -= valorSaque;
+                }
+
+                consultarSaldo() {
+                    return this.saldo;
+                }
+            }
+
+            // Novo objeto da class ContaBancaria
+            let x = new ContaBancaria();
+
+            console.log(x.consultarSaldo());
+            x.depositar(450);
+            console.log(x.consultarSaldo());
+            x.sacar(200);
+            console.log(x.consultarSaldo());
+
+            // Paradigma de OO
+            class Cadeira {
+                constructor(qtde_pernas, giratoria, cor) {
+                    this.qtde_pernas = qtde_pernas;
+                    this.giratoria = giratoria;
+                    this.cor = cor;
+                }
+
+                girarCadeira() {
+                    if (this.giratoria == true) {
+                        console.log('girou');
+                    } else {
+                        console.log('cadeira não é giratória')
+                    }
+                }
+            }
+
+            let cadeira = new Cadeira(4, false, 'azul');
+            console.log(cadeira);
+            cadeira.girarCadeira();
+
+            let cadeira2 = new Cadeira(1, true, 'vermelha');
+            console.log(cadeira2);
+            cadeira2.girarCadeira();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

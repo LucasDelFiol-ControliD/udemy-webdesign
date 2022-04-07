@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções - Parâmetros Default</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            function contarUmaHistoria(personagem = 'Johnny', atividade = 'dormir', nome_dono = 'Lucas') { // Valores default são estabelecidos na assinatura da função ou do método
+                document.write(`Era uma vez um gato chamado ${personagem}, ele adorava ${atividade}, seu dono era o ${nome_dono} e eles viveram felizes para sempre.`);
+            }
+
+            contarUmaHistoria('Harley', undefined, 'Paula'); // É possível substituir os valores default
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

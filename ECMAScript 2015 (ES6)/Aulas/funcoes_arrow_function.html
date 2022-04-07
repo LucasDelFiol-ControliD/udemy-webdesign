@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções - Arrow function</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            let quadrado = function(x = 1) {
+                return x*x;
+            }
+
+            // Arrow function - equivalente
+            let quadrado2 = (x = 1) => {
+                return x*x;
+            }
+
+            let quadrado3 = x => {
+                return x*x;
+            }
+
+            let quadrado4 = x => x*x; // Retorno implícito
+            
+            console.log(quadrado());
+            console.log(quadrado2(2));
+            console.log(quadrado3(3));
+            console.log(quadrado3(4));
+
+            let parOuImpar = function(numero) {
+                if (numero % 2 == 0) {
+                    return 'par';
+                } else {
+                    return 'ímpar';
+                }
+            }
+
+            let parOuImpar2 = numero => {
+                if (numero % 2 == 0) {
+                    return 'par';
+                } else {
+                    return 'ímpar';
+                }
+            }
+
+            let parOuImpar3 = numero => numero % 2 == 0 ? 'par' : 'ímpar';
+
+            console.log(parOuImpar(4));
+            console.log(parOuImpar2(5));
+            console.log(parOuImpar3(6));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
