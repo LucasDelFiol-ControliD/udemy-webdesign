@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funções Construtoras</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // Função construtora
+            let Carro = function() {
+                this.cor = 'Amarelo';
+                this.modelo = 'Chevette';
+                this.velocidadeAtual = 0;
+                this.velocidadeMaxima = 180;
+
+                this.getVelocidadeAtual = function() {
+                    return this.velocidadeAtual;
+                }
+
+                this.setVelocidadeAtual = function(velocidadeAtual) {
+                    this.velocidadeAtual = velocidadeAtual;
+                }
+
+                this.acelerar = function () {
+                    let velocidade = this.getVelocidadeAtual() + 50;
+                    if(velocidade > this.velocidadeMaxima) {
+                        velocidade = this.velocidadeMaxima;
+                    }
+                    this.setVelocidadeAtual(velocidade);
+                }
+            }
+
+            let carro = new Carro();
+
+            console.log(`A velocidade atual é ${carro.getVelocidadeAtual()}`);
+            carro.acelerar();
+            console.log(`A velocidade atual é ${carro.getVelocidadeAtual()}`);
+            carro.acelerar();
+            console.log(`A velocidade atual é ${carro.getVelocidadeAtual()}`);
+            carro.acelerar();
+            console.log(`A velocidade atual é ${carro.getVelocidadeAtual()}`);
+            carro.acelerar();
+            console.log(`A velocidade atual é ${carro.getVelocidadeAtual()}`);
+
+            // Encapsulando atributos e métodos
+            let Carro2 = function() {
+                // Atributo privado: variável no contexto da função
+                var velocidadeMaxima = 180; // Não pode ser modificada fora da função
+                var quilometrosRodados = 0;
+
+                this.cor = 'Amarelo';
+                this.modelo = 'Chevette';
+                this.velocidadeAtual = 0;
+
+                this.getVelocidadeAtual = function() {
+                    return this.velocidadeAtual;
+                }
+
+                this.setVelocidadeAtual = function(velocidadeAtual) {
+                    this.velocidadeAtual = velocidadeAtual;
+                }
+
+                this.acelerar = function () {
+                    let velocidade = this.getVelocidadeAtual() + 50;
+                    if(velocidade > velocidadeMaxima) {
+                        velocidade = velocidadeMaxima;
+                    }
+                    this.setVelocidadeAtual(velocidade);
+
+                    setQuilometrosRodados(0.07);
+                    console.log(quilometrosRodados);
+                }
+
+                // Método privado
+                var setQuilometrosRodados = function(q) {
+                    quilometrosRodados += q;
+                }
+            }
+
+            let carro2 = new Carro2();
+
+            console.log(carro);
+            console.log(carro2);
+
+            console.log(`A velocidade atual é ${carro2.getVelocidadeAtual()}`);
+            carro2.acelerar();
+            console.log(`A velocidade atual é ${carro2.getVelocidadeAtual()}`);
+            carro2.acelerar();
+            console.log(`A velocidade atual é ${carro2.getVelocidadeAtual()}`);
+            carro2.acelerar();
+            console.log(`A velocidade atual é ${carro2.getVelocidadeAtual()}`);
+            carro2.acelerar();
+            console.log(`A velocidade atual é ${carro2.getVelocidadeAtual()}`);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
