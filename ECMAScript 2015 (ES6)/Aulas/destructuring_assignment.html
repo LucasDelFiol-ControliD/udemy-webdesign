@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Destructuring Assignment</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // Este operador tira valores de dentro de uma estrutura
+            // -------------------- Contexto - Array --------------------
+            let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão'];
+
+            // Extração de um único valor
+            let teste = frutas[0];
+            console.log(teste);
+
+            // Operador de desestruturação: é possível pular índices e definir valores padrões caso esse elemento não exista no array
+            let [a, b, ,c = 'Abacate', d, e = 'Banana'] = frutas;
+            console.log(a, b, c, d, e);
+
+            let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']];
+            let [, [, nome]] = coisas;
+            console.log(nome);
+
+            // -------------------- Contexto - Objetos --------------------
+            let produto = {
+                descricao: 'Notebook',
+                preco: 1800,
+
+                // Composição
+                detalhes: {
+                    fabricante: 'abc',
+                    modelo: 'xyz'
+                }
+            }
+
+            // Extração de atributos de objetos para variáveis
+            let {descricao, preco} = produto;
+            console.log(descricao, preco);
+
+            let {descricao: desc, preco: prec} = produto;
+            console.log(desc, prec);
+
+            // É possível estabelecer valores default
+            let {descricao: teste1, preco: teste2, desconto = 5} = produto;
+            console.log(teste1, teste2, desconto);
+
+            let {detalhes: {fabricante, modelo}} = produto;
+            console.log(fabricante, modelo);
+
+            // -------------------- Contexto - Funções --------------------
+            // Arrays
+            let arr = [10, 20, 30, 40];
+            function funcaoTeste([a, b, , c, d = 100]) {
+                console.log(a, b, c, d);
+            }
+            funcaoTeste(arr);
+
+            // Objetos
+            let obj = {
+                a: 10,
+                b: 20,
+                c: 30,
+                d: 40
+            }
+            function funcaoTeste2({a: x, d, z = 10}) {
+                console.log(x, d, z);
+            }
+            funcaoTeste2(obj);
+
+            // -------------------- Contexto - Rest --------------------
+            // Array
+            let arr2 = [100, 200, 300, 400];
+            let [num, ...resto] = arr2;
+            console.log(num, resto);
+
+            // Objetos
+            let obj2 = {
+                a: 1000,
+                b: 2000,
+                c: 3000,
+                d: 4000
+            }
+            let {a: num2, ...resto2} = obj2;
+            console.log(num2, resto2);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
