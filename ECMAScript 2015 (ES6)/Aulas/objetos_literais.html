@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objeto Literal</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            class Produto {
+                constructor(descricao, preco) {
+                    this.descricao = descricao;
+                    this.preco = preco;
+                }
+
+                verDescricao() {
+                    console.log(`${this.descricao} por apenas ${this.preco}`);
+                }
+            }
+
+            let produto = new Produto('Notebook', 2200);
+            produto.verDescricao();
+
+            // Objeto literal
+            let produtoLiteral = {
+                descricao: 'Geladeira',
+                preco: 1800,
+                verDescricao: function() {
+                    console.log(`${this.descricao} por apenas ${this.preco}`);
+                }
+            }
+
+            produtoLiteral.verDescricao();
+
+            // Melhoria na Notação
+            let nome = 'Lucas';
+            let idade = '23';
+            let sexo = 'Masculino';
+            let profissao = 'Engenheiro';
+
+            let objeto = {
+                nome: nome,
+                idade: idade,
+                sexo: sexo,
+                profissao: profissao,
+                exibirResumo: function() {
+                    console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`);
+                }
+            }
+
+            console.log(objeto);
+            objeto.exibirResumo();
+
+            // Quando o par valor possui o mesmo nome, é possível encurtar a declaração do objeto
+            let objeto2 = {
+                nome,
+                idade,
+                sexo,
+                profissao,
+                exibirResumo() {
+                    console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`);
+                }
+            }
+
+            console.log(objeto2);
+            objeto2.exibirResumo();
+
+            // Modificando valores
+            let pessoa = {
+                nome: 'Lucas',
+                idade: 23
+            }
+
+            console.log(pessoa);
+
+            pessoa.nome = 'Batata';
+            pessoa.idade = 32;
+
+            console.log(pessoa);
+
+            // Inclusão de novos atributos
+            pessoa.sexo = 'Feminino';
+            console.log(pessoa);
+
+            // Inclusão de novos métodos
+            pessoa.dizerOi = () => console.log('Olá, tudo bem?');
+            pessoa.dizerOi();
+
+            // Objeto único
+            let assinatura = {
+                idCliente: 1000,
+                descricao: 'Acesso a internet',
+                status() {
+                    console.log('Ativo');
+                }
+            }
+
+            console.log(assinatura.descricao);
+
+            // y não recebe o objeto literal, apenas uma referência de acesso a ele
+            let y = assinatura;
+            console.log(y.descricao);
+
+            y.descricao = 'Internet + tv + telefone';
+            console.log(assinatura.descricao);
+            console.log(y.descricao);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

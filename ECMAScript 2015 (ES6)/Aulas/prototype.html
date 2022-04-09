@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prototype</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // Objeto literal
+            let a1 = {
+                cor: 'Branco',
+                modelo: 'Airbus a380',
+                levantarVoo: function() {
+                    console.log('Levantar Voo');
+                }
+            }
+
+            // Função construtura
+            let AviaoF = function() {
+                this.cor = 'Azul',
+                this.modelo = 'Boeing 787',
+                this.levantarVoo = function() {
+                    console.log('Lenvantar Voo');
+                }
+            }
+
+            let a2 = new AviaoF();
+
+            // Classe
+            class AviaoC {
+                constructor() {
+                    this.cor = 'Vermelho',
+                    this.modelo = 'Embraer E-Jets'
+                }
+
+                levantarVoo() {
+                    console.log('Levantar Voo');
+                }
+            }
+
+            let a3 = new AviaoC();
+
+            console.log(a1); // Objeto literal
+            console.log(a2); // Função construtora
+            console.log(a3); // Classe
+
+            // Todos os objetos descendem de Object, que é uma função
+
+            Object.prototype.attr50 = 'Z'; // Todo objeto criado irá possuir este atributo
+
+            let animal = {attr1: 'a'}
+            let vertebrado = {__proto__: animal, attr2: 'b'} // vertebrado agora possui acesso à atributos de animal
+            let ave = {__proto__: vertebrado, attr3: 'c', attr2: 'x'} // ave agora possui acesso à atributos de vertebrado
+
+            console.log(ave.attr3, ave.attr2, ave.attr1, ave.attr50);
+            // JS procura pela primeira opção, logo attr2 retorna 'x'
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

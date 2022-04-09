@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operador Rest/Spread</title>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // ----- Contexto Spread: espalha parâmetros -----
+            // Strings
+            let tituloArtigo = 'Como utilizar o operador rest/spread';
+
+            console.log(tituloArtigo);
+            console.log(...tituloArtigo);
+            console.log([...tituloArtigo]);
+
+            // Arrays
+            let listaCursos1 = ['NodeJS e MongoDB', 'ES6, TypeScript e Angular 4'];
+            let listaCursos2 = ['Multiplataforma Android/IOS', 'Introdução ao GNU/Linux'];
+            let listaCursosCompleto = ['Web Completo', 'Android Completo', ...listaCursos1, ...listaCursos2];
+
+            console.log(listaCursosCompleto);
+
+            // Objetos
+            let pessoa = {nome: 'João', idade: 27};
+            let clone = {endereco: 'Rua ABC', ...pessoa};
+
+            console.log(clone);
+
+            // ----- Contexto Rest: junta parâmetros -----
+            // Recebe todos os parâmetros e os coloca em uma estrutura de Array
+            function soma(...param) {
+                console.log(param);
+
+                let resultado = 0;
+                param.forEach(v => resultado += v);
+                return resultado;
+            }
+
+            // Não precisa ter um valor definido de parâmetros para utilizar a função
+            console.log(soma(3, 8, 5, 7));
+
+            function multiplicacao(m, ...p) {
+                console.log(m);
+                console.log(p);
+
+                let resultado = 0;
+                p.forEach(v => resultado += m*v);
+                return resultado;
+            }
+
+            console.log(multiplicacao(5, 7, 12, 3, 49));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
