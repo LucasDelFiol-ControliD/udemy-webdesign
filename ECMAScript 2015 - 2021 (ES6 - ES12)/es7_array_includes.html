@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES7 - Array Includes</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let arr = ['banana', 'maçã', 'uva'];
+
+            // Existe um determinado elemento
+            let retorno = arr.find(item => item == 'maçã');
+            console.log(retorno);
+
+            retorno = arr.find(item => item == 'abacaxi');
+            console.log(retorno);
+
+            // Retorna true ou false
+            retorno = arr.includes('maçã');
+            console.log(retorno);
+            retorno = arr.includes('abacaxi');
+            console.log(retorno);
+        </script>
+    </body>
+</html>

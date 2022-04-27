@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES6 - Generators</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function* testeGenerator() {
+                yield 'Teste 1';
+                yield 'Teste 2';
+                yield 'Teste 3';
+                return 'Teste 4';
+            }
+
+            // Variável recebe um objeto iterator
+            let meuGenerator = testeGenerator();
+            // console.log(meuGenerator);
+
+            console.log(meuGenerator.next()); // Executa até o primeiro yield
+            console.log('-----');
+            console.log(meuGenerator.next()); // Executa até o segundo yield
+            console.log('-----');
+            console.log(meuGenerator.next()); // Executa até o terceiro yield
+            console.log('-----');
+            console.log(meuGenerator.next()); // Executa até o return
+
+            function* conversar() {
+                let opcao = yield 'E ai, tudo bem?'; // Próximo next deverá ter um parâmetro de entrada
+
+                // console.log(opcao);
+
+                if (opcao == 'sim') {
+                    yield 'Ótimo, fico feliz!';
+
+                    opcao = yield 'Como eu posso te ajudar? Quer uma piada para começar?';
+
+                    if (opcao == 'sim') {
+                        fetch('piadas.json')
+                            .then(response => response.json())
+                            .then(piadas => {
+                                let piada = piadas[Math.floor(Math.random()*10)];
+                                console.log(piada.piada);
+                                setTimeout(() => {
+                                    console.log(piada.resposta);
+                                }, 4000);
+                            });
+                        
+                        yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com um atendente';
+                    } else {
+                        yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com um atendente';
+                    }
+                } else {
+                    yield 'Respire fundo e tenha paciência';
+                    yield 'Digite 1 para compras, 2 para vendas ou 3 para falar com um atendente';
+                }
+
+                return 'Atendimento finalizado!';
+            }
+
+            let conversa = conversar();
+            // console.log(conversa);
+
+            function acao() {
+                let resposta = document.getElementById('resposta').value;
+
+                let iteracao = conversa.next(resposta); // Executa até o primeiro yield
+                console.log(iteracao);
+
+                if (iteracao.done) {
+                    document.getElementById('teste').style.display = 'none';
+                }
+            }
+        </script>
+
+        <div id="teste">
+            <button type="button" onclick="acao()">Avançar</button>
+            Resposta: <input type="text" id="resposta">
+        </div>
+    </body>
+</html>

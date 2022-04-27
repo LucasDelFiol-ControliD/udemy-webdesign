@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES10 - Object fromEntries</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let dados = [
+                ['nome', 'Jorge Sant Ana'],
+                ['profissional', [
+                    ['site', 'jorgesantana.net.br'],
+                    ['profissao', 'Programador']
+                ]],
+                ['hobbies', ['caminhar', 'nadar']],
+                ['pais', 'Brasil']
+            ];
+
+            console.log(dados);
+
+            // Converte arrays para um objeto
+            console.log(Object.fromEntries(dados));
+
+            // Em JS, não temos suporte a arrays associativos
+            // Objetos: chave e valor
+        </script>
+    </body>
+</html>

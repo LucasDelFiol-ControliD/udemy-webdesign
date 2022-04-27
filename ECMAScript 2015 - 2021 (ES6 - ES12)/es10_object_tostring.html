@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES10 - Object toString</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            class Carro {
+                constructor(marca, modelo, ano) {
+                    this.marca = marca,
+                    this.modelo = modelo,
+                    this.ano = ano
+                }
+
+                // Sobrescreve o método padrão
+                toString() {
+                    return `Carro da marca ${this.marca}, modelo ${this.modelo}, ano ${this.ano}`;
+                }
+            }
+
+            let carro = new Carro('Jeep', 'Renegade', 2021);
+            console.log(carro);
+
+            // Padrão: [object Type] -> tipo do objeto
+            console.log(carro.toString());
+        </script>
+    </body>
+</html>

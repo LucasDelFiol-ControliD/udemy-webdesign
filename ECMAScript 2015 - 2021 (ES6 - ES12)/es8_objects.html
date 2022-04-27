@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES8 - Object Values, Object Entries e getOwnPropertyDescriptors</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let objeto = {
+                nome: 'Jorge Sant Ana',
+                profissional: {
+                    site: 'jorgesantana.net.br',
+                    profissao: 'Programador'
+                },
+                hobbies: [
+                    {id: 1, hobby: 'Fazer trilha'},
+                    {id: 2, hobby: 'Dormir'}
+                ],
+                pais: 'Brasil'
+            }
+
+            console.log(objeto);
+            
+            // Retorna os atributos do objeto em um array
+            console.log(Object.values(objeto));
+
+            // Retorna os atributos do objeto em um array de pares chave: valor
+            console.log(Object.entries(objeto));
+
+            // Retorna os atributos do objeto por descritor
+            console.log(Object.getOwnPropertyDescriptors(objeto));
+
+            // Descritor Writable: false -> valor da propriedade não pode ser modificado
+            Object.defineProperty(objeto, 'nome', {
+                writable: false
+            });
+            console.log('-------------------------');
+
+            console.log(Object.getOwnPropertyDescriptors(objeto));
+            console.log('');
+
+            // Descritor Enumerable: false -> propriedade em questão não é exibida em laços de repetição
+            for (let propriedade in objeto) {
+                console.log(propriedade, objeto[propriedade]);
+            }
+
+            Object.defineProperty(objeto, 'hobbies', {
+                enumerable: false
+            });
+            Object.defineProperty(objeto, 'profissional', {
+                enumerable: false
+            });
+            console.log('-------------------------');
+
+            for (let propriedade in objeto) {
+                console.log(propriedade, objeto[propriedade]);
+            }
+            console.log('');
+
+            // Descritor Configurable: false -> indica que a propriedade não pode ser deletada e também não é possível modificar os descritores, exceto a mudança de writable para false
+            console.log(Object.getOwnPropertyDescriptors(objeto));
+
+            Object.defineProperty(objeto, 'pais', {
+                configurable: false
+            });
+            console.log('-------------------------');
+
+            console.log(Object.getOwnPropertyDescriptors(objeto));
+        </script>
+    </body>
+</html>

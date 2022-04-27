@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES8 - String padStart e padEnd</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            // padStart: preenchimento a esquerda
+            // padEnd: preenchimento a direita
+            
+            let codigo = '1001';
+
+            codigo = codigo.padStart(10, '0'); // 0000001001
+            console.log(codigo);
+
+            codigo = codigo.padEnd(15, '0'); // 000000100100000
+            console.log(codigo);
+        </script>
+    </body>
+</html>

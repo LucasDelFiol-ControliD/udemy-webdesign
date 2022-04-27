@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES6 - Promises</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let resposta = {};
+
+            // Um valor que pode estar disponível agora, no futuro ou nunca
+            let promessa1 = new Promise((resolve, reject) => {
+                try {
+                    // throw new Error('Opa, houve um erro!');
+
+                    setTimeout(() => {
+                        resposta = {dados: {msg: 'Recuperamos os dados com sucesso'}};
+                        resolve('Sucesso'); // Solução
+                    }, 500);
+                } catch (e) {
+                    setTimeout(() => {
+                        reject(e); // Erro
+                    }, 500);
+                }
+            });
+
+            console.log(promessa1); // Promessa pendente
+
+            setTimeout(() => {
+                console.log(promessa1); // Promessa concluída
+                console.log(resposta);
+            }, 1000);
+
+            // Estados da Promise:
+            // Pending: estado inicial, não foi realizada nem rejeitada
+            // Fulfilled: sucesso na operação
+            // Rejected: falha na operação
+
+            let promessa2 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let resposta_da_requisicao = {};
+
+                    // Teste
+                    if (false) {
+                        resposta_da_requisicao = {
+                            codigo: 1050,
+                            erro: 'Falha de autorização'
+                        };
+                        reject(resposta_da_requisicao);
+                    }
+
+                    resposta_da_requisicao = {
+                        0: {id: 1, nome: 'João'},
+                        1: {id: 2, nome: 'José'},
+                        2: {id: 3, nome: 'Maria'}
+                    }
+
+                    resolve(resposta_da_requisicao);
+                }, 2000);
+            }).then(dados => { // Recebe como parâmetro o resolve
+                console.log('Operação sequencial: ', dados);
+
+                return 'Parâmetro para o then 2';
+            }).then(param => {
+                console.log('Then número 2: ', param);
+            }).then(() => {
+                console.log('Then número 3');
+            }).then(() => {
+                console.log('Then número 4');
+
+                return 'Parâmetro para o then 5';
+            }).catch(erro => { // Recebe como parâmetro o reject
+                console.log('Operação sequencial: ', erro);
+
+                return 'Parâmetro do catch para o then 5';
+            }).then(param => {
+                console.log('Then número 5: ', param);
+            }).then(() => {
+                console.log('Then número 6');
+            });
+        </script>
+    </body>
+</html>
