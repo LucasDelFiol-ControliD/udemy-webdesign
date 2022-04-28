@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES11 - Promise allSettled</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            const promise1 = new Promise((resolve, reject) => {
+                return setTimeout(() => resolve('Promise 1 resolvida'), 2000);
+            });
+
+            const promise2 = new Promise((resolve, reject) => {
+                return setTimeout(() => reject('Promise 2 rejeitada'), 2000);
+            });
+
+            const promise3 = new Promise((resolve, reject) => {
+                return setTimeout(() => resolve('Promise 3 resolvida'), 2000);
+            });
+
+            const promises = [promise1, promise2, promise3];
+
+            // Espera todas as promessas serem resolvidas/rejeitadas
+            Promise.allSettled(promises)
+                .then(resultados => {
+                    console.log(resultados);
+                })
+        </script>
+    </body>
+</html>

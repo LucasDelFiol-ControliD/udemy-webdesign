@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES11 - Nullish Coalescing Operator</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let teste1 = null || 'Valor a direita';
+            console.log(teste1);
+
+            let teste2 = 0 || 'Valor a direita';
+            console.log(teste2);
+
+            let teste3 = undefined || 'Valor a direita';
+            console.log(teste3);
+
+            let teste4 = '' || 'Valor a direita';
+            console.log(teste4);
+
+            let teste5 = 'Valor a esquerda' || 'Valor a direita';
+            console.log(teste5);
+
+            console.log('------------------------------');
+
+            // Operador nullish coalescing (??)
+            teste1 = null ?? 'Valor a direita';
+            console.log(teste1);
+
+            teste2 = 0 ?? 'Valor a direita'; // 0 é utilizável
+            console.log(teste2);
+
+            teste3 = undefined ?? 'Valor a direita';
+            console.log(teste3);
+
+            teste4 = '' ?? 'Valor a direita'; // string vazia é utilizável
+            console.log(teste4);
+
+            teste5 = 'Valor a esquerda' ?? 'Valor a direita';
+            console.log(teste5);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES11 - Dynamic Import</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <button id="btnSaudacao">Saudação</button>
+        <hr>
+        <input type="text" id="cep" placeholder="CEP">
+        <button id="btnCEP">Consultar CEP</button>
+
+        <script type="module">
+            // Carregamento estático: sempre será carregado, mesmo que não utilizado
+            // import {saudacao, getEnderecoByCEP} from './import/lib.mjs';
+
+            document.querySelector('#btnSaudacao').addEventListener('click', async () => {
+                // Promise
+                const module = await import('./import/lib1.mjs');
+                console.log(module.saudacao());
+            });
+
+            document.querySelector('#btnCEP').addEventListener('click', async () => {
+                let cep = document.querySelector('#cep').value;
+
+                if (cep.length == 8) {
+                    // Promise
+                    let x = await import('./import/lib2.mjs');
+                    x.getEnderecoByCEP(cep)
+                        .then(dados => console.log(dados));
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES11 - Optional Chaining</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let obj = {
+                2021: {
+                    janeiro: {
+                        pessoal: 2000,
+                        casa: 1500,
+                        investimento: 1000
+                    },
+                    fevereiro: {
+                        pessoal: 1800,
+                        casa: 1600,
+                        investimento: 800
+                    }
+                }
+            }
+
+            console.log(obj);
+
+            // Testa e então acessa o atributo
+            if (obj['2021'].marco) {
+                console.log(obj['2021'].marco.pessoal); // Se não testar, dá erro e quebra a aplicação
+            }
+            
+            // Faz a mesma coisa
+            console.log(obj['2021'].marco?.pessoal);
+        </script>
+    </body>
+</html>

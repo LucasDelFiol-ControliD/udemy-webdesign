@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>ES11 - Operador de Visibilidade Private</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            class Pessoa {
+                #humor = 0;
+
+                #mensagens = [
+                    'Seja feliz',
+                    'Não estou para conversa hoje'
+                ];
+
+                constructor(nome) {
+                    this.#mudarHumor();
+                    this.nome = nome;
+                }
+
+                dizerOi() {
+                    return `Olá, meu nome é ${this.nome}`;
+                }
+
+                getHumor() {
+                    return this.#humor;
+                }
+
+                #mudarHumor() {
+                    this.#humor = Math.floor(Math.random()*2);
+                }
+
+                getMensagem() {
+                    return this.#mensagens[this.#humor];
+                }
+            }
+
+            let p = new Pessoa('José');
+            console.log(p.nome);
+            console.log(p.dizerOi());
+            // console.log(p.#humor);
+            console.log(p.getMensagem());
+        </script>
+    </body>
+</html>
