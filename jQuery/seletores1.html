@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Seletores 1</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>jQuery</h1>
+
+        <div>Div 1</div>
+        <div>Div 2</div>
+
+        <ul id="menu1">
+            <li>Menu 1 - Item 1</li>
+            <li>Menu 1 - Item 2</li>
+            <li>Menu 1 - Item 3</li>
+        </ul>
+
+        <ul>
+            <li class="itemMenu2">Menu 2 - Item 1</li>
+            <li class="itemMenu2">Menu 2 - Item 2</li>
+            <li class="itemMenu2">Menu 2 - Item 3</li>
+        </ul>
+
+        <input type="text" 
+        placeholder="campo 1">
+
+        <select>
+            <option>-- Selecione uma opção --</option>
+            <option>Opção 1</option>
+            <option>Opção 2</option>
+        </select>
+
+        <br>
+
+        <img src="Imagens/carro.jpg">
+    </body>
+    <script>
+        // Seleciona as tags HTML
+        console.log($('h1'));
+        console.log($('div'));
+
+        // Seleciona os itens com as classes indicadas
+        console.log($('.itemMenu2'));
+
+        // Seleciona os itens com o id indicado
+        console.log($('#menu1'));
+    </script>
+</html>

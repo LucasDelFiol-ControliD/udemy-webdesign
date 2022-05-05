@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Seletores 2</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <input type="text" placeholder="input 1" class="exemplo1">
+        <input type="text" placeholder="input 2">
+        <input type="text" placeholder="input 3">
+
+        <div class="exemplo1">div 1</div>
+        <div class="exemplo2">div 2</div>
+        <div class="exemplo3">div 3</div>
+
+        <ul class="lista1">
+            <li class="exemplo1">opção 1</li>
+            <li class="exemplo1">opção 2</li>
+            <li class="exemplo1">opção 3</li>
+        </ul>
+
+        <ul class="lista2">
+            <li class="exemplo2">opção 1</li>
+            <li class="exemplo2">opção 2</li>
+            <li class="exemplo2">opção 3</li>
+        </ul>
+    </body>
+    <script>
+        // Combinação de seletores
+
+        // Seleciona elementos por classe de tag específica
+        console.log($('li.exemplo1'));
+
+        // Seleciona elementos por classe de classe específica
+        console.log($('.lista2 .exemplo2'));
+
+        // Atuação sobre o array de retorno dos elementos selecionados
+        console.log($('.lista1 .exemplo1'));
+
+        console.log($('.lista1 .exemplo1:first'));
+        console.log($('.lista1 .exemplo1:last'));
+        console.log($('.lista1 .exemplo1:odd'));
+        console.log($('.lista1 .exemplo1:even'));
+    </script>
+</html>
