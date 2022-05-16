@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Recuperando e Manipulando Atributos de Tags HTML</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(() => {
+                // Método attr acessa atributos de elementos HTML
+                $('div').attr('style', 'background-color: blue; width: 200px; height: 200px');
+                $('input').attr('value', 'Teste');
+            });
+        </script>
+    </head>
+    <body>
+        <img src="Imagens/esfera_1.png" border="5">
+        <div style="background-color: red; width: 100px; height: 100px"></div>
+        <input type="text" value="Eu sou um input">
+    </body>
+</html>

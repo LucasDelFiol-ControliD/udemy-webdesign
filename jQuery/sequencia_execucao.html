@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Sequência de Execução</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <script>
+            // Executa a função depois que o DOM fica completo
+            $(document).ready(function() {
+                function teste() {
+                    console.log($('#exemplo'));
+                }
+                teste();
+            });
+
+            function teste2() {
+                console.log($('#exemplo'));
+            }
+
+            // Funciona da mesma forma
+            $(teste2);
+        </script>
+        <div id="exemplo">Teste</div>
+    </body>
+    <script>
+        console.log($('#exemplo')); // Este elemento já existe (está acima...), logo pode ser selecionado
+    </script>
+</html>
